@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=BBH+Bartle&family=BBH+Hegarty&family=Oswald:wght@200..700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="cart-container">
+        <h1>Shopping Cart</h1>
+        <div class="cart-containers">
+            <div class="container-1">
+                Your Cart is Empty
+            </div>
+            <div class="container-2">
+                <p>Order Summary : ₹0</p>
+                <p>Shipping : $15</p>
+                <p>Tax : $0</p>
+                <hr>
+                <p>Total :</p>
+                <div class="proceed-btn">
+                    <button id="check-btn">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="sec-1">
+        <h1 class="title">LEXARO</h1>
+        <div class="items">
+            <ul>
+                <a href="../Home page/index.html" target="">
+                    <li>Home</li>
+                </a>
+                <a href="../Product page/index.html" target="">
+                    <li>Shop</li>
+                </a>
+                <a href="../Contact page/index.html" target="">
+                    <li>Contact</li>
+                </a>
+            </ul>
+        </div>
+
+        <div class="cart"><a href="#" target="" id="cart-btn">🛒</a></div>
+
+    </section>
+    <div class="main"><br>
+        <h1>Contact us</h1>
+        <div class="main-1">
+            <div class="contact-box">
+                <form method="POST" action="lexaro.php">
+                    <div class="contacts">
+                        <label for="">Name *</label><br>
+                        <input type="text" placeholder="Your name" name="name" required><br>
+                        <label for="">Email *</label><br>
+                        <input type="email" placeholder="email" name="email" required><br>
+                        <label for="">Message *</label><br>
+                        <textarea class="msg-box" placeholder="Message" name="message" required></textarea>
+                        <input type="submit" value="submit" id="submit-btn">
+                    </div>
+                </form>
+            </div>
+            <div class="get-in">
+                <div class="get-in-touch">
+                    <p class="address">Address :</p><br>
+                    <p>Coimbatore, Tamilnadu</p>
+                    <p class="address">Phone :</p><br>
+                    <p>91+ 9042167622</p>
+                    <p class="address">Email :</p><br>
+                    <p>lexaro@gmail.com</p>
+                    <p class="social">Social medias :</p><br>
+                    <a href="https://www.facebook.com/ganesh.961903" class="social-media" title="Facebook"><i
+                            class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/_j.a.c.k_sparrow_/" class="social-media-1" title="Instagram"><i
+                            class="fa-brands fa-instagram"></i></a><br><br>
+                    <div class="platform">
+                        <a href="https://www.linkedin.com/in/ganeshm7622/" title="Linkdin" class="link-din"><i
+                                class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/dashboard" title="Github" class="git-hub-1"><i
+                                class="fa-brands fa-github"></i></a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="sec-3">
+        <div class="end-page">
+            <p class="end-page-1">2026 LEXARO. All Rights</p>
+        </div>
+    </section>
+
+
+    <!-- Shipping Page -->
+
+
+    <div class="shipping-container">
+        <div class="shipping-page">
+            <h2>Checkout</h2>
+            <form action="lexaro_1.php" method="POST">
+                <input type="text" placeholder="Your name" name="name" required>
+                <input type="email" placeholder="email" name="email" required>
+                <input type="text" placeholder="Address" name="address" required>
+                <input type="text" placeholder="City" name="city" required>
+                <input type="number" placeholder="Zip_Code" name="number" required><br><br>
+                <input type="submit" value="submit" name="submit" id="submit">
+            </form>
+            <h2>
+                Payment Methods
+            </h2>
+            <div class="payment-box">
+                <span>Scan QR to Pay</span>
+                <img src="demo-qrcode.jpeg" alt="Lexaro QR Code">
+            </div>
+            <div>
+                <button class="btn primary" id="cash-on-delivery">Cash On Delivery</button>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!-- Place Order -->
+
+    <div class="place-order-container">
+        <button type="submit" id="place-order" name="order" required>Submit and Place Order</button>
+    </div>
+
+
+    <!-- Order Confirmed -->
+
+    <div class="order-success">
+        <p>✅ Order Successfully..</p><br>
+        <p>Thanks For Shopping in LEXARO</p><br>
+        <button class="btn secondary" id="contshop-btn">Continue Shopping</button>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
