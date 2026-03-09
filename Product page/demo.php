@@ -8,9 +8,6 @@ if(isset($_POST['submit'])){
     $z = $_POST['number'];
     $m = $_POST['modelname'];
     $q = $_POST['quantity'];
-    $d = $_POST['date'];
-    $t = $_POST['time'];
-
 
     $connect = mysqli_connect("localhost","root","","lexaro_1");
 
@@ -19,8 +16,8 @@ if(isset($_POST['submit'])){
     }
 
     $sql = "INSERT INTO shipping_details
-            (client_name, client_email, client_address, client_city, zip_code, modelname, quantity, date, time)
-            VALUES ('$n','$e','$a','$c','$z','$m','$q','$d','$t')";
+            (client_name, client_email, client_address, client_city, zip_code, modelname, quantity)
+            VALUES ('$n','$e','$a','$c','$z','$m','$q')";
 
     $v = mysqli_query($connect,$sql);
 

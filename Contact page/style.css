@@ -376,6 +376,30 @@ body {
     background: #1f5036;
 }
 
+
+.history{
+    position: fixed;
+    right: 13px;
+    margin-top: 29%;
+}
+.history a{
+    padding: 10px 25px;
+    background: #2c6e49;
+    border: none;
+    font-size: 13px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    border-radius: 8px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: 0.3s ease-in-out;
+}
+.history a:hover{
+    background: #1f5036;
+}
+
 /* --- RESPONSIVE DESIGN --- */
 @media (max-width: 850px) {
     .cart-containers {
@@ -406,7 +430,6 @@ body {
 
 /* Background */
 .shipping-container {
-    min-height: 100vh;
     display: flex;
     justify-content: center;
     margin-top: 25%;
@@ -523,6 +546,9 @@ body {
 @media (max-width: 480px) {
     .shipping-page {
         padding: 20px;
+    }
+    .shipping-container{
+        padding-top: 300px;
     }
 
     .payment-box img {

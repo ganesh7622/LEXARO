@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-commerce website</title>
-    <link rel="stylesheet" href="Home page/style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -16,8 +16,8 @@
 </head>
 
 <body>
-     <div class="cart-container">
-        <h1>Shopping Cart</h1>                                                                  
+    <div class="cart-container">
+        <h1>Shopping Cart</h1>
         <div class="cart-containers">
             <div class="container-1">
                 Your Cart is Empty
@@ -39,9 +39,9 @@
         <div class="items">
             <ul> <a href="">
                     <li>Home</li>
-                </a> <a href="/Product page/product.html">
+                </a> <a href="../Product page/product.html">
                     <li>Shop</li>
-                </a> <a href="/Contact page/contact.html">
+                </a> <a href="../Contact page/contact.html">
                     <li>Contact</li>
                 </a> </ul>
         </div>
@@ -64,26 +64,32 @@
 
     <section class="sec-3">
         <div class="end-page">
-            <p class="end-page-1">2026 LEXARO. All Rights</p>
+            <p class="end-page-1">Ganesh.M Final B.Sc Information Technology</p>
         </div>
     </section>
 
 
-     <!-- Shipping Page -->
+    <!-- Shipping Page -->
 
 
     <div class="shipping-container">
         <div class="shipping-page">
             <h2>Checkout</h2>
-
-            <input type="text" placeholder="Your name" name="clientname">
-            <input type="email" name="clientemail" placeholder="Email">
-            <input type="text" placeholder="Address" name="clientaddress">
-            <input type="text" placeholder="City" name="clientcity">
-            <input type="number" name="number" placeholder="Zip Code"><br><br>
-              <h2>
+            <form action="demo.php" method="POST">
+                <input type="text" placeholder="Your name" name="name" required>
+                <input type="email" placeholder="email" name="email" required>
+                <input type="text" placeholder="Address" name="address" required>
+                <input type="text" placeholder="City" name="city" required>
+                <input type="number" placeholder="Zip_Code" name="number" required>
+                <input type="text" placeholder="Model Name" name="modelname" required>
+                <input type="number" placeholder="No of Quantity" name="quantity" required>
+                <input type="date" placeholder="date" name="date" required>
+                <input type="time" placeholder="time" name="time" required><br><br>
+                <input type="submit" value="submit" name="submit" id="submit">
+            </form>
+            <h2>
                 Payment Methods
-              </h2>
+            </h2>
             <div class="payment-box">
                 <span>Scan QR to Pay</span>
                 <img src="demo-qrcode.jpeg" alt="Lexaro QR Code">
@@ -91,29 +97,29 @@
             <div>
                 <button class="btn primary" id="cash-on-delivery">Cash On Delivery</button>
             </div>
-            
+
         </div>
     </div>
 
 
-     <!-- Place Order -->
+    <!-- Place Order -->
 
-     <div class="place-order-container">
+    <div class="place-order-container">
         <button id="place-order">Place Order</button>
-     </div>
+    </div>
 
 
-     <!-- Order Confirmed -->
+    <!-- Order Confirmed -->
 
-     <div class="order-success">
+    <div class="order-success">
         <p>✅ Order Successfully..</p><br>
         <p>Thanks For Shopping in LEXARO</p><br>
         <button class="btn secondary" id="contshop-btn">Continue Shopping</button>
-     </div>
+    </div>
 
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="/Home page/script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

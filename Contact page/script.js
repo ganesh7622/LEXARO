@@ -180,8 +180,7 @@ document.addEventListener('click', (e) => {
     }
 
     // ✅ Cart has items
-    shipcontainer.style.display = "block";
-    container1.style.display = "none";
+    shipcontainer.style.display = "block"; 
 });
 
 
@@ -200,6 +199,7 @@ cashdelivery.addEventListener('click', () => {
     placeorder.style.display = "block"
     shipcontainer.style.display = "none";
     container2.style.display = "none"
+    container1.style.display = "none"
 })
 
 placeorder.addEventListener('click', () => {
@@ -208,7 +208,8 @@ placeorder.addEventListener('click', () => {
 })
 
 continueshop.addEventListener('click', () => {
-    window.location.href = "../Product page/index.html";
+    window.location.href = "../Product page/product.html";
+
 });
 
 

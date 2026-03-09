@@ -14,8 +14,8 @@
 
 <body>
     <div class="cart-container">
-        <h1>Shopping Cart</h1>                                                                  
-        <div class="cart-containers">
+        <h1>Shopping Cart</h1>
+        <div class="cart-containers" id="main-wrapper">
             <div class="container-1">
                 Your Cart is Empty
             </div>
@@ -31,11 +31,12 @@
             </div>
         </div>
     </div>
+
     <section class="sec-1">
         <h1 class="title">LEXARO</h1>
         <div class="items">
             <ul>
-                <a href="/index.html" target="">
+                <a href="/Home page/index.html" target="">
                     <li>Home</li>
                 </a>
                 <a href="" target="">
@@ -50,6 +51,11 @@
         <div class="cart"><a href="#" target="" id="cart-btn">🛒</a></div>
 
     </section>
+
+    <div class="order_history">
+        <button id="order-btn">Order History</button>
+    </div>
+
     <div class="starting-title" id="start-title">
         <div class="starting-title-1">
             <h1>Our Collection</h1><br>
@@ -247,7 +253,7 @@
 
             </div>
             <div class="image">
-                <img src="Images/image-18.jpg" alt="" width="230px" height="200px">
+                <img src="Images/image-18.jpg" alt="uythrgfsd" width="230px" height="200px">
                 <div class="details">
                     <h3 class="detail-one">Rolex</h3>
                     <p class="detail-two">₹ 63,992.34</p>
@@ -414,7 +420,7 @@
 
         <div class="images">
             <div class="image">
-                <img src="images/puma-1.jpg" alt="" width="230px" height="200px">
+                <img src="images/puma-1.jpeg" alt="" width="230px" height="200px">
                 <div class="details">
                     <h3 class="detail-one">Puma</h3>
                     <p class="detail-two">₹ 7300.14</p>
@@ -474,7 +480,7 @@
 
             </div>
             <div class="image">
-                <img src="Images/puma-7.jpg" alt="" width="230px" height="200px">
+                <img src="Images/puma-7.jpeg" alt="" width="230px" height="200px">
                 <div class="details">
                     <h3 class="detail-one">Puma</h3>
                     <p class="detail-two">₹ 6723.57</p>
@@ -494,7 +500,7 @@
 
             </div>
             <div class="image">
-                <img src="Images/adidas-1.jpg" alt="" width="230px" height="200px">
+                <img src="Images/adidas-1.jpeg" alt="" width="230px" height="200px">
                 <div class="details">
                     <h3 class="detail-one">Adidas</h3>
                     <p class="detail-two">₹ 6163.49</p>
@@ -524,7 +530,7 @@
 
             </div>
             <div class="image">
-                <img src="Images/adidas-4.jpg" alt="" width="230px" height="200px">
+                <img src="Images/adidas-4.jpeg" alt="" width="230px" height="200px">
                 <div class="details">
                     <h3 class="detail-one">Adidas</h3>
                     <p class="detail-two">₹ 5280.34</p>
@@ -534,7 +540,7 @@
 
             </div>
             <div class="image">
-                <img src="Images/adidas-5.jpg" alt="" width="230px" height="200px">
+                <img src="Images/adidas-5.jpeg" alt="" width="230px" height="200px">
                 <div class="details">
                     <h3 class="detail-one">Adidas</h3>
                     <p class="detail-two">₹ 4980.34</p>
@@ -544,7 +550,7 @@
 
             </div>
             <div class="image">
-                <img src="Images/adidas-6.jpg" alt="" width="230px" height="200px">
+                <img src="Images/adidas-6.jpeg" alt="" width="230px" height="200px">
                 <div class="details">
                     <h3 class="detail-one">Adidas</h3>
                     <p class="detail-two">₹ 4560.34</p>
@@ -674,7 +680,7 @@
 
             </div>
             <div class="image">
-                <img src="Images/reebok-3.jpg" alt="" width="230px" height="200px">
+                <img src="Images/reebok-3.jpeg" alt="" width="230px" height="200px">
                 <div class="details">
                     <h3 class="detail-one">Reebok</h3>
                     <p class="detail-two">₹ 1440.34</p>
@@ -684,7 +690,7 @@
 
             </div>
             <div class="image">
-                <img src="Images/reebok-4.jpg" alt="" width="230px" height="200px">
+                <img src="Images/reebok-4.jpeg" alt="" width="230px" height="200px">
                 <div class="details">
                     <h3 class="detail-one">Reebok</h3>
                     <p class="detail-two">₹ 1290.34</p>
@@ -1417,15 +1423,19 @@
     <div class="shipping-container">
         <div class="shipping-page">
             <h2>Checkout</h2>
-
-            <input type="text" placeholder="Your name" name="clientname">
-            <input type="email" name="clientemail" placeholder="Email">
-            <input type="text" placeholder="Address" name="clientaddress">
-            <input type="text" placeholder="City" name="clientcity">
-            <input type="number" name="number" placeholder="Zip Code"><br><br>
-              <h2>
+            <form action="demo.php" method="POST">
+                <input type="text" placeholder="Your name" name="name" required>
+                <input type="email" placeholder="email" name="email" required>
+                <input type="text" placeholder="Address" name="address" required>
+                <input type="text" placeholder="City" name="city" required>
+                <input type="number" placeholder="Zip_Code" name="number" required>
+                <input type="text" placeholder="Model Name" name="modelname" required>
+                <input type="number" placeholder="No of Quantity" name="quantity" required><br><br>
+                <input type="submit" value="submit" name="submit" id="submit">
+            </form>
+            <h2>
                 Payment Methods
-              </h2>
+            </h2>
             <div class="payment-box">
                 <span>Scan QR to Pay</span>
                 <img src="Images/demo-qrcode.jpeg" alt="Lexaro QR Code">
@@ -1433,28 +1443,53 @@
             <div>
                 <button class="btn primary" id="cash-on-delivery">Cash On Delivery</button>
             </div>
-            
+
         </div>
     </div>
 
 
-     <!-- Place Order -->
+    <!-- Place Order -->
 
-     <div class="place-order-container">
+    <div class="place-order-container">
         <button id="place-order">Place Order</button>
-     </div>
+    </div>
 
 
-     <!-- Order Confirmed -->
+    <!-- Order Confirmed -->
 
-     <div class="order-success">
+    <div class="order-success">
         <p>✅ Order Successfully..</p><br>
         <p>Thanks For Shopping in LEXARO</p><br>
         <button class="btn secondary" id="contshop-btn">Continue Shopping</button>
-     </div>
+    </div>
 
+
+    <!-- Admin page -->
+
+    <div class="adminpage">
+    <h1 id="admin1">welcome to LEXARO</h1>
+
+    <section class="admin2">
+        <h1 id="admin3">Admin Page</h1>
+
+        <input type="text" name="name" placeholder="Username" id="username"><br>
+
+        <input type="password" name="password" placeholder="Password" id="password"><br>
+
+        <button id="admin5" type="button">Submit</button><br><br>
+    </section>
+</div>
+
+
+
+
+    <div id="history-container">
+        <a id="orderHistoryLink">Order History</a>
+    </div>
 
     <script src="script.js"></script>
-</body>
+
+
+    </div>
 
 </html>

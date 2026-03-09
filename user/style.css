@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #10B981, #059669);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#title{
+    font-size: 50px;
+    letter-spacing: 2px;
+    color: white;
+}
+
+/* Main heading */
+#title-1 {
+    color: black;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+/* Card section */
+.one {
+    background: #ffffff;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 30px;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Form heading */
+form h1 {
+    text-align: center;
+    color: black;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+/* Inputs & select */
+select,
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 14px;
+    outline: none;
+}
+
+select:focus,
+input:focus {
+    border-color: #10B981;
+}
+
+/* Submit button */
+input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    background: #10B981;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+input[type="submit"]:hover {
+    background: #059669;
+    transform: translateY(-2px);
+}
+
+/* Info text */
+form p {
+    font-size: 13px;
+    color: #555;
+    margin-top: 8px;
+    text-align: center;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    body > h1 {
+        font-size: 22px;
+    }
+
+    .one {
+        padding: 20px;
+    }
+
+    form h1 {
+        font-size: 18px;
+    }
+}

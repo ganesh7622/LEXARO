@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=BBH+Bartle&family=BBH+Hegarty&family=Oswald:wght@200..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="title">welcome to LEXARO</h1>
+    <section class="one">
+        <form action="" method="post">
+            <h1 id="title-1">Admin Page</h1>
+            <input type="text" name="name" placeholder="Username" required><br>
+            <input type="password" name="password" placeholder="Password" required><br>
+            <input type="submit"><br><br> 
+        </form>
+    </section>
+
+     <script>
+    const form = document.querySelector("form");
+    
+    const username = document.querySelector('input[name="name"]');
+    const password = document.querySelector('input[name="password"]');
+
+    var body=document.querySelector('body')
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        if (username.value === "admin" && password.value === "ganesh") {
+                
+            } else {
+                alert("Student username or password is incorrect ❌");
+            }
+    });
+</script>
+</body>
+</html>

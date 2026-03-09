@@ -1,3 +1,33 @@
+// --------------- Cart Button  ------------- //
+
+var cartbtn = document.querySelector('#cart-btn');
+var ordertbtn = document.querySelector('#order-btn');
+var adpage = document.querySelector(".adminpage")
+adpage.style.display = "none"
+
+
+cartbtn.addEventListener('click', () => {
+    ordertbtn.style.display = "block"
+
+})
+
+ordertbtn.addEventListener('click', () => {
+    document.querySelector(".cart-container").style.display = "none";
+    // container.style.display = "block"
+    container.style.marginTop = "10%"
+    container.style.marginLeft = "10%"
+    container.style.border = "1.5px solid black"
+    container.style.borderRadius = "10px"
+    container.style.width = "800px"
+    container.style.padding = "10px"
+    adpage.style.display = "block"
+    adpage.style.zIndex = "100";
+    adpage.style.marginTop = "10%"
+    adpage.style.marginLeft = "35%"
+    adpage.style.alignItems = "center";
+})
+
+
 // ---------------- FILTER BUTTONS ---------------------
 
 const filterButtons = document.querySelectorAll(".btn-1");
@@ -219,8 +249,12 @@ document.addEventListener('click', (e) => {
 
     // ✅ Cart has items
     shipcontainer.style.display = "block";
-    container1.style.display = "none";
 });
+
+
+// ----- Submit Page ------ //
+
+
 
 
 // Place Order //
@@ -238,11 +272,13 @@ cashdelivery.addEventListener('click', () => {
     placeorder.style.display = "block"
     shipcontainer.style.display = "none";
     container2.style.display = "none"
+    container1.style.display = "none"
+
 })
 
-placeorder.addEventListener('click',()=>{
-    ordersucess.style.display="block"
-    placeorder.style.display="none"
+placeorder.addEventListener('click', () => {
+    ordersucess.style.display = "block"
+    placeorder.style.display = "none"
 })
 
 continueshop.addEventListener('click', () => {
@@ -268,6 +304,151 @@ continueshop.addEventListener('click', () => {
     // Scroll to top (shopping page)
     window.scrollTo({ top: 0, behavior: "smooth" });
 });
+
+
+
+// ------------- History Page ------------ //
+
+document.getElementById("contshop-btn").addEventListener("click", () => {
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    if (cart.length === 0) {
+        alert("Cart is empty");
+        return;
+    }
+
+    let orderHistory = JSON.parse(localStorage.getItem("orderHistory")) || [];
+
+    // current date & time
+    const now = new Date();
+    const orderDate = now.toLocaleDateString();   // 07/02/2026
+    const orderTime = now.toLocaleTimeString();   // 10:45:32 AM
+
+    cart.forEach(item => {
+        orderHistory.push({
+            img: item.img,
+            brand: item.brand,
+            model: item.title,
+            price: item.price,
+            qty: item.qty,
+            date: orderDate,
+            time: orderTime
+        });
+    });
+
+    localStorage.setItem("orderHistory", JSON.stringify(orderHistory));
+    localStorage.removeItem("cart");
+
+});
+
+
+
+let history = JSON.parse(localStorage.getItem("orderHistory")) || [];
+let container = document.getElementById("history-container");
+
+container.style.display = "none"
+
+
+function displayHistory() {
+    container.innerHTML = "";
+
+    if (history.length === 0) {
+        container.innerHTML = "<p>No orders found</p>";
+        return;
+    }
+
+    history.forEach((item, index) => {
+        container.innerHTML += `
+       <div class="order-item">
+    <img src="${item.img}" alt="${item.brand}" class="order-img">
+
+    <div class="order-details">
+        <h3 class="brand">${item.brand}</h3>
+        <p>Model: ${item.model}</p>
+        <p class="price">${item.price}</p>
+        <p>Qty: ${item.qty}</p>
+
+        <p class="date-time">
+            📅 ${item.date} &nbsp; ⏰ ${item.time}
+        </p>
+
+        <div class="order-actions">
+            <button class="edit-btn" onclick="editProduct(${index})">Edit</button>
+            <button class="delete-btn" onclick="deleteProduct(${index})">Delete</button>
+        </div>
+    </div>
+</div>
+
+        `;
+    });
+}
+
+
+function deleteProduct(index) {
+    history.splice(index, 1);
+    localStorage.setItem("orderHistory", JSON.stringify(history));
+    displayHistory();
+}
+
+function editProduct(index) {
+    let newBrand = prompt("Rename Brand", history[index].brand);
+    let newModel = prompt("Rename model", history[index].model);
+    let newPrice = prompt("Update price", history[index].price);
+
+    if (newBrand) history[index].brand = newBrand;
+    if (newModel) history[index].model = newModel;
+    if (newPrice) history[index].price = newPrice;
+
+    localStorage.setItem("orderHistory", JSON.stringify(history));
+    displayHistory();
+}
+
+displayHistory();
+
+
+
+// -------------- Admin page --------------- //
+
+const adminBtn = document.querySelector('#admin5');
+const username = document.querySelector('#username');
+const password = document.querySelector('#password');
+
+adminBtn.addEventListener("click", () => {
+
+    if (username.value === "admin" && password.value === "ganesh") {
+        container.style.display = "block";
+        adpage.style.display = "none";
+    }
+    else {
+        alert("Student username or password is incorrect ❌");
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
